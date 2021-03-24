@@ -1,0 +1,32 @@
+<aside class="sidebar p-3">
+  <!-- Logo -->
+  <div class="sidebar__logo text-center mt-1">
+    <a routerLink="/">
+      <img [src]="generalInfo.logo" [alt]="generalInfo.title" class="img-responsive">
+    </a>
+  </div>
+
+  <!-- Separator -->
+  <mat-divider class="mt-3 mb-3"></mat-divider>
+
+  <nav class="sidebar_menu mt-5">
+    <ul>
+      <li>
+        <a mat-menu-item routerLink="users" routerLinkActive="active">Users</a>
+      </li>
+
+      <mat-divider></mat-divider>
+
+      <li>
+        <a mat-menu-item routerLink="posts" routerLinkActive="active">Posts</a>
+      </li>
+
+      <mat-divider></mat-divider>
+
+      <li>
+        <a mat-menu-item routerLink="photos" routerLinkActive="active">Photos</a>
+      </li>
+    </ul>
+  </nav>
+
+</aside>

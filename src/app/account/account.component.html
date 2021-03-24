@@ -1,0 +1,25 @@
+<div class="account full-screen d-flex">
+  <mat-sidenav-container class="d-flex flex-grow-1">
+    <!-- Sidebar -->
+    <mat-sidenav
+      class="account__sidebar w-25"
+      mode="side"
+      [(opened)]="openSidebar"
+      *ngIf="isAccountModule">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <!-- Content wrapper -->
+    <mat-sidenav-content class="app__content-wrapper flex-grow-1">
+      <!-- Header -->
+      <div class="account__header">
+        <app-header [isOpen]="openSidebar" (toggleSidebar)="toggleSidebar($event)"></app-header>
+      </div>
+
+      <!-- Content -->
+      <main class="account__content p-5">
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

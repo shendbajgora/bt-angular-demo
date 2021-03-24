@@ -1,0 +1,10 @@
+<app-page-headline [title]="'Photos'"></app-page-headline>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 col-md-4 col-sm-2 col mb-3" *ngFor="let photo of photos">
+      <app-photo [photo]="photo">
+      </app-photo>
+    </div>
+  </div>
+</div>

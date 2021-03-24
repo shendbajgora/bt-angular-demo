@@ -1,0 +1,18 @@
+<div class="post" *ngIf="post">
+
+  <app-page-headline [title]="post.title" [btn]="btn"></app-page-headline>
+
+  <mat-card class="post__content">
+    <mat-card-header>
+      <mat-card-title>
+        {{post.title}}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        {{post.body}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &.active {
+    font-weight: bold;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.full-screen {
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}

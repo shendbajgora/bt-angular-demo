@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <header class="header d-flex align-content-center justify-content-between w-100">
+    <button mat-icon-button aria-label="Toggle sidebar" (click)="onToggleSidebar()" *ngIf="isAccountModule">
+      <mat-icon>{{ isOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <ng-template [ngIf]="!isAccountModule">
+      <div class="d-flex align-items-center">
+        <h2 class="title m-0">
+          <a routerLink="/">{{ generalInfo.title }}</a>
+        </h2>
+
+        <nav class="header__menu ml-5">
+          <ul class="d-flex align-items-center">
+            <li class="mr-4">
+              <a routerLink="news" routerLinkActive="active" class="text-uppercase mat-small">
+                News
+              </a>
+            </li>
+
+            <li class="mr-4">
+              <a routerLink="about-us" routerLinkActive="active" class="text-uppercase mat-small">
+                About us
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </ng-template>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="login()" *ngIf="!isLoggedIn">Login</button>
+      <a routerLink="/blog" mat-menu-item *ngIf="isAccountModule">Blog</a>
+
+      <ng-template [ngIf]="isLoggedIn">
+        <a routerLink="/account" mat-menu-item *ngIf="!isAccountModule">Account</a>
+        <a mat-menu-item (click)="logout()">Logout</a>
+      </ng-template>
+    </mat-menu>
+  </header>
+</mat-toolbar>

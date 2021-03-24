@@ -1,0 +1,21 @@
+<div class="guest full-screen text-center d-flex flex-column justify-content-between">
+  <!-- Logo -->
+  <div class="guest__logo p-3 pt-5 mb-5">
+    <a routerLink="/">
+      <img [src]="generalInfo.logo" [alt]="generalInfo.title">
+    </a>
+  </div>
+
+  <!-- Page's content -->
+  <div class="guest__content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Footer -->
+  <div class="guest__footer p-3 pb-5 mt-5">
+    <p class="guest__copy-right">
+      <span class="font-weight-bold">&copy; Copyright {{ year }}.</span> <br>
+      All right reserved. Powered by <span class="font-italic">{{ generalInfo.title }}</span>
+    </p>
+  </div>
+</div>
