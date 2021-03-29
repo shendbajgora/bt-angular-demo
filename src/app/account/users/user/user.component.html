@@ -1,1 +1,139 @@
-<p>user works!</p>
+<div class="user container-md mb-3">
+  <mat-card>
+    <mat-card-content class="m-3">
+      <mat-card-title>Add a new user</mat-card-title>
+      <form class="w-100" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!-- Name -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Name: </mat-label>
+                <input type="text" matInput id="name" formControlName="name" required>
+                <mat-error *ngIf="form.controls.name.touched && form.controls.name.invalid">Name is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <!-- Surname -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Surname: </mat-label>
+                <input type="text" matInput id="surname" formControlName="surname">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!-- Username -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Username: </mat-label>
+                <input type="text" matInput id="username" formControlName="username" required>
+                <mat-error *ngIf="form.controls.username.touched && form.controls.username.invalid">Userame is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <!-- Email -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Email: </mat-label>
+                <input type="text" matInput id="email" formControlName="email" required>
+                <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">{{ validateEmail() }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!-- Password -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Password: </mat-label>
+                <input type="password" matInput id="password" formControlName="password">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <!-- Address -->
+        <mat-card-title>Address</mat-card-title>
+        <div class="row" formGroupName="address">
+          <div class="col-12">
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Street: </mat-label>
+                <input type="text" matInput id="address" formControlName="street">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>City: </mat-label>
+                <input type="text" matInput id="address" formControlName="city">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Zipcode: </mat-label>
+                <input type="text" matInput id="address" formControlName="zipcode">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <mat-card-title>Contact info</mat-card-title>
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <!-- Phone -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Phone: </mat-label>
+                <input type="text" matInput id="phone" formControlName="phone" required>
+                <mat-error *ngIf="form.controls.phone.touched && form.controls.phone.invalid">Phone is required</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-6 col-12">
+            <!-- Website -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Website: </mat-label>
+                <input type="text" matInput id="website" formControlName="website">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row" formGroupName="company">
+          <div class="col-lg-6 col-12">
+            <!-- Company -->
+            <div class="form-group mb-3">
+              <mat-form-field class="w-100">
+                <mat-label>Company name: </mat-label>
+                <input type="text" matInput id="company-name" formControlName="name">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <!-- Add -->
+            <div class="form-group d-flex">
+              <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+                style="margin: 0 auto"
+                [disabled]="!form.valid">
+                Add user
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

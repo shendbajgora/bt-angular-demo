@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -14,6 +14,7 @@ export class PageHeadlineComponent implements OnInit {
     url: string | string[],
     absolutePath: boolean;
   };
+  @Output() btnChange = new EventEmitter<any>();
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -22,13 +23,18 @@ export class PageHeadlineComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateTo(): void {
-   const { url, absolutePath } = this.btn;
-
-   if (absolutePath) {
-     this.router.navigateByUrl(url as string);
-   } else {
-     this.router.navigate(url as string[], { relativeTo: this.activatedRoute });
-   }
+  onClick(): void {
+    const { url, absolutePath } = this.btn;
+    if (!url) {
+     // emit
+     this.btnChange.emit();
+    } else {
+     // navigate to
+     if (absolutePath) {
+      this.router.navigateByUrl(url as string);
+     } else {
+      this.router.navigate(url as string[], { relativeTo: this.activatedRoute });
+     }
+    }
   }
 }

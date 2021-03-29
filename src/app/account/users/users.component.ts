@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../../shared/services/users/users.service';
+import { MatTable } from '@angular/material/table'
 import { IUser } from '../../shared/models/user';
 import { Subscription } from 'rxjs';
 
@@ -12,11 +13,11 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   displayedColumns: string[] = ['name', 'username', 'email', 'phone'];
   dataSource: IUser[] = [];
+  showAddUser: boolean = false;
+  @ViewChild(MatTable) table: MatTable<any>;
 
   btn = {
-    label: 'Add user',
-    url: ['create'],
-    absolutePath: false
+    label: '+ Add users',
   };
 
   subscription: Subscription = new Subscription();
@@ -35,5 +36,15 @@ export class UsersComponent implements OnInit, OnDestroy {
     this.subscription = this.usersService.readAll().subscribe(response => {
       this.dataSource = response;
     });
+  }
+
+  public toggleAddUser(): void {
+    this.showAddUser = !this.showAddUser;
+    this.btn.label = this.showAddUser ? '- Add users' : '+ Add users';
+  }
+
+  public addUser(user: IUser): void {
+    this.dataSource.push(user);
+    this.table.renderRows();
   }
 }
