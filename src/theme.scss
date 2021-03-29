@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$bt: (
+  Main:#0074bd,
+  Light:#4d9ed1,
+  Dark: #0057a6,
+  contrast: (
+    Main: #fff,
+    Light: #fff,
+    Dark: #fff
+  ));
+$bt-accent: (
+  Main: #00dfeb,
+  Light: #4de9f1,
+  Dark: #00d7e5,
+  contrast: (
+    Main: #000,
+    Light: #000,
+    Dark: #000
+));
+
+$bt-app-primary: mat-palette($bt, Main, Light, Dark);
+$bt-app-accent: mat-palette($bt-accent, Main, Light, Dark);
+$bt-app-theme: mat-light-theme((color: (primary: $bt-app-primary, accent: $bt-app-accent)));
+
+@include angular-material-theme($bt-app-theme);
+
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+// $my-app-primary: mat-palette($mat-light-blue, A200, A100, A400);
+// $my-app-accent: mat-palette($mat-blue);
+// $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent);
+
+// @include angular-material-theme($my-app-theme);
