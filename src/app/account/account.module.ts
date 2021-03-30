@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AccountComponent } from './account.component';
 import { UsersComponent } from './users/users.component';
@@ -39,6 +40,7 @@ import { PhotoComponent } from './photos/photo/photo.component';
     MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
+    MatSnackBarModule
   ]
 })
 export class AccountModule { }
