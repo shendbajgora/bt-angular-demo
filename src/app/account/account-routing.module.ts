@@ -6,6 +6,7 @@ import { UserComponent } from './users/user/user.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PostsComponent } from '../shared/components/posts/posts.component';
 import { PostComponent } from '../shared/components/posts/post/post.component';
+import {TodosComponent} from './todos/todos.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent
+      },
+      {
+        path: 'users/create',
+        component: UserComponent
       },
       {
         path: 'users/:id',
@@ -31,6 +36,10 @@ const routes: Routes = [
       {
         path: 'photos',
         component: PhotosComponent
+      },
+      {
+        path: 'todos',
+        component: TodosComponent
       },
       {
         path: '',

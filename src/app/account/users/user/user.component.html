@@ -1,4 +1,9 @@
 <div class="user container-md mb-3">
+
+  <div class="d-flex flex-row-reverse mb-3">
+    <a [routerLink]="['..']" mat-raised-button color="primary">Back</a>
+  </div>
+
   <mat-card>
     <mat-card-content class="m-3">
       <mat-card-title>Add a new user</mat-card-title>
@@ -121,14 +126,18 @@
         <div class="row">
           <div class="col-12">
             <!-- Add -->
-            <div class="form-group d-flex">
+            <div class="form-group d-flex align-items-center justify-content-center">
               <button
                 type="submit"
                 mat-raised-button
                 color="primary"
-                style="margin: 0 auto"
+                class="mr-3"
                 [disabled]="!form.valid">
-                Add user
+                {{ editMode ? 'Edit' : 'Create' }} User
+              </button>
+
+              <button type="button" *ngIf="editMode" mat-raised-button color="warn" (click)="deleteUser()">
+                Delete User
               </button>
             </div>
           </div>

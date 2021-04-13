@@ -18,6 +18,7 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PhotoComponent } from './photos/photo/photo.component';
+import { TodosComponent } from './todos/todos.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PhotoComponent } from './photos/photo/photo.component';
     UsersComponent,
     UserComponent,
     PhotosComponent,
-    PhotoComponent
+    PhotoComponent,
+    TodosComponent
   ],
   imports: [
     CommonModule,

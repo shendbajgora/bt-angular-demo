@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -16,6 +17,7 @@ import { PageHeadlineComponent } from './components/page-headline/page-headline.
 import { PostsComponent } from './components/posts/posts.component';
 import { PostCardComponent } from './components/posts/post-card/post-card.component';
 import { PostComponent } from './components/posts/post/post.component';
+import { PostCommentComponent } from './components/posts/post-comment/post-comment.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { PostComponent } from './components/posts/post/post.component';
     PageHeadlineComponent,
     PostsComponent,
     PostCardComponent,
-    PostComponent
+    PostComponent,
+    PostCommentComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,8 @@ import { PostComponent } from './components/posts/post/post.component';
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   exports: [
     HeaderComponent,

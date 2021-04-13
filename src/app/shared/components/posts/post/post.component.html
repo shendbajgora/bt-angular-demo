@@ -15,4 +15,18 @@
       </p>
     </mat-card-content>
   </mat-card>
+
+  <div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col-12">
+        <app-page-headline [title]="'Comments'"></app-page-headline>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="comments.length > 0">
+      <div class="col-12">
+        <app-post-comment [comments]="comments"></app-post-comment>
+      </div>
+    </div>
+  </div>
 </div>

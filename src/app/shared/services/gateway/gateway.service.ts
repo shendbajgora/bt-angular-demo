@@ -33,7 +33,7 @@ export class GatewayService<T = any> {
     return environment.gateway;
   }
 
-  create({path = '', body, queryParams}: IRequest = this.initialRequest, options?: any): Observable<T | any> {
+  public create({path = '', body, queryParams}: IRequest = this.initialRequest, options?: any): Observable<T | any> {
     const endpoint = this.appendQueryParams(`${this.endpoint}${path}`, queryParams);
     return this.http.post<T>(endpoint, body, options);
   }
